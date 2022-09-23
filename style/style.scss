@@ -93,6 +93,9 @@ section{
 }
 
 @media (max-width:600px) {
+    .text{
+        text-align: center;
+    }
     .pro{
         display: flex;
         flex-wrap: wrap;
