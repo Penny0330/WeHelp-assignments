@@ -32,7 +32,7 @@ li {
 }
 
 .text {
-  background-color: aquamarine;
+  background-color: #b5ece6;
   height: 300px;
   margin-bottom: 10px;
   font-size: 40px;
@@ -61,7 +61,7 @@ section {
 .promotion {
   width: 580px;
   height: 50px;
-  background-color: bisque;
+  background-color: #d9d9d9;
   margin: 10px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -72,6 +72,9 @@ section {
 }
 
 .promotion img {
+  -webkit-box-flex: 0;
+      -ms-flex: none;
+          flex: none;
   width: 80px;
   height: 50px;
 }
@@ -79,25 +82,26 @@ section {
 .item1 {
   width: 280px;
   margin: 10px;
+  position: relative;
 }
 
 .item1 img {
   width: 100%;
 }
 
-.item1 P {
-  width: 100%;
-  position: relative;
-  bottom: 28px;
-  background-color: rgba(248, 247, 247, 0.5);
-  text-align: center;
-}
-
 .item1 i {
   color: #dada41;
-  position: relative;
-  left: 250px;
-  bottom: 200px;
+  position: absolute;
+  right: 15px;
+  top: 10px;
+}
+
+.item1 P {
+  width: 100%;
+  position: absolute;
+  bottom: 5px;
+  background-color: rgba(248, 247, 247, 0.5);
+  text-align: center;
 }
 
 @media (max-width: 1200px) {
