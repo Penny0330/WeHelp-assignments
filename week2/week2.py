@@ -2,16 +2,10 @@
 # 完成以下函式，在函式中使用迴圈計算最小值到最大值之間，固定間隔的整數總和。其中你可以假設 max 一定大於 min 且為整數，step 為正整數。
 
 def calculate(min, max, step):
-    if max > step:
-        sum = 0
-        for x in range(min, max, step):
-            sum += x
-        print(sum + max)
-    else:
-        sum = 0
-        for x in range(min, max, step):
-            sum += x
-        print(sum)
+    sum = 0
+    for x in range(min, max + 1, step):
+        sum += x
+    print(sum)
 
 
 calculate(1, 3, 1)  # 你的程式要能夠計算 1+2+3，最後印出 6

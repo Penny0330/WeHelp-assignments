@@ -2,19 +2,12 @@
 // 完成以下函式，在函式中使用迴圈計算最小值到最大值之間，固定間隔的整數總和。其中你可以假設 max 一定大於 min 且為整數，step 為正整數。
 
 function calculate(min, max, step){
-    if (max > step){
         let sum = 0;
-        for(let i = min; i < max; i += step){
-            sum += i;
-        }
-        console.log(sum + max);
-    }else{
-        let sum = 0;
-        for(let i = min; i < max; i += step){
+        for(let i = min; i <= max; i += step){
             sum += i;
         }
         console.log(sum);
-    }
+
 }
 
     calculate(1, 3, 1); // 你的程式要能夠計算 1+2+3，最後印出 6
@@ -30,15 +23,15 @@ function calculate(min, max, step){
 
 function avg(data){
     let count = data["employees"].length;
-    let x_count = 0;
+    let i_count = 0;
     let sum_salary = 0;
     for(let i = 0; i < count; i++){
         if(data["employees"][i]["manager"] == false ){
-            x_count += 1;
+            i_count += 1;
             sum_salary += data["employees"][i]["salary"];
         }
     }
-    console.log(sum_salary / x_count);
+    console.log(sum_salary / i_count);
 }
 
     avg({
