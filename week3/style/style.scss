@@ -1,0 +1,152 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans TC', sans-serif;
+    background-color:#ddd;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    margin: 10px;
+}
+
+p{
+    i{
+        color: darkcyan;
+    }
+}
+
+ul{
+    list-style: none;
+    display: flex;
+}
+
+li{
+    padding: 0px 5px;
+    i{
+        margin: 0 3px;
+        color: darkcyan;
+    }
+}
+
+.hamburger{
+    display: none;
+}
+
+.text{
+    background-color: #333;
+    color: white;
+    box-shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
+    height: 300px;
+    margin-bottom: 10px;
+    font-size: 40px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    i{
+        background-color: #333;
+        color: white;
+        padding: 0 1rem;
+    }
+}
+
+section{
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+}
+
+.item{
+    flex-wrap: wrap;
+}
+
+.promotion{
+    width: 43.5%;
+    height: 50px;
+    background-color: rgb(74, 73, 73);
+    color: white;
+    box-shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    img{
+        flex: none;
+        width: 80px;
+        height: 50px;
+        margin-right: 10px;
+    }
+}
+
+.item1{
+    width: 21%;
+    margin: 10px;
+    background-color: rgb(74, 73, 73);
+    color: white;
+    box-shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
+    text-align: center;
+    padding-bottom: 10px;
+    img{
+        width: 100%;
+        aspect-ratio: 16/9;
+    }
+}
+
+.button{
+    text-align: center;
+    margin: 1rem 0;
+}
+
+
+.btn{
+    background-color: #333;
+    color: white;
+    border: 0;
+    border-radius: 5px;
+    padding: 0.35rem 0.75rem;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.btn:hover{
+    background-color: white;
+    color: #333;
+}
+
+@media (max-width:1200px) {
+    .promotion{
+        width: 45%;
+    }
+    .item{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .item1{
+        width: 45%;
+    }
+}
+
+@media (max-width:600px) {
+    .text{
+        text-align: center;
+    }
+    .pro{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .promotion{
+        width: 90%;
+    }
+    .item1{
+        width: 90%;
+    }
+    ul{
+        display: none;
+    }
+    .hamburger{
+        display: block;
+    }
+}
