@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>歡迎光臨，請輸入帳號密碼</h1>
+<h2>登入系統</h2>
+<form action="/signin" method="POST">
+    <div class="account">
+        <label for="account">帳號 : </label>
+        <input type="text" name="account" id="account">
+    </div>
+    <div class="password">
+        <label for="password">密碼 : </label>
+        <input type="password" name="password" id="password">
+    </div>
+    <button>登入</button>
+</form>
+
+<br/>
+<br/>
+<br/>
+<hr/>
+<br/>
+<br/>
+
+<h2>計算平方根</h2>
+<form action="/square" method="POST">
+    <div class="calculate">
+        <label for="num">正整數 : </label>
+        <input type="text" name="num" id="num">
+    </div>
+    <button>計算</button>
+</form>
+
+{% endblock content %}

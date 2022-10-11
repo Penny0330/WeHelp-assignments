@@ -1,0 +1,73 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    text-align: center;
+}
+
+h1{
+    background-color: rgb(18, 54, 122);
+    color: white;
+
+    padding: 20px;
+}
+
+h2{
+    margin: 20px;
+}
+
+
+.account{
+    margin: 10px;
+    font-size: 20px;
+}
+
+.account input{
+    height: 25px;
+}
+
+.password{
+    margin: 10px;
+    font-size: 20px;
+}
+
+.password input{
+    height: 25px;
+}
+
+button{
+    padding: 8px 10px;
+    font-size: 16px;
+    background-color: rgb(18, 54, 122);
+    color: white;
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+a{
+    text-decoration: none;
+    background-color: rgb(18, 54, 122);
+    color: white;
+    padding: 9px 11px;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.calculate{
+    margin-top: 30px;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.calculate input{
+    height: 25px;
+}
+
+p{
+    margin-top: 30px;
+    font-size: 25px;
+}
