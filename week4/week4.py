@@ -46,25 +46,27 @@ def signout():
     return redirect("/")
 
 
-# @app.route("/square", methods=["POST"])
-# def square():
-#     num = request.form["num"]
-#     num = int(num)
-#     # num = request.args.get("num", type=int, default=0)
-#     squareNum = num*num
-#     return render_template("square.html", squareNum=squareNum, num=num)
+# Optional
 
-@app.route("/square", methods=["POST", ])
+@app.route("/square")
 def square():
-    nums = request.form["num"]
-    return redirect(url_for("square1", num=nums))
+    # num = request.form["num"]
+    # num = int(num)
+    num = request.args.get("num", type=int, default=0)
+    squareNum = num*num
+    return render_template("square.html", squareNum=squareNum, num=num)
+
+# @app.route("/square", methods=["POST", ])
+# def square():
+#     nums = request.form["num"]
+#     return redirect(url_for("square1", num=nums))
 
 
-@ app.route("/square/<num>")
-def square1(num):
-    num = int(num)
-    squareNum = num * num
-    return render_template("square.html", num=num, squareNum=squareNum)
+# @app.route("/square/<num>")
+# def square1(num):
+#     num = int(num)
+#     squareNum = num * num
+#     return render_template("square.html", num=num, squareNum=squareNum)
 
 
 if __name__ == "__main__":
