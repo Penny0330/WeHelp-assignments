@@ -35,6 +35,12 @@ h2{
     border: 0px  rgba(246, 245, 245, 0.1);
     color: white;
     box-shadow: 0px 1px 5px rgba(104, 104, 104, 0.4);
+    /* outline:none;
+    border-bottom: 1px solid white; */
+}
+
+.account input:focus{
+    outline: 2px dashed rgba(255, 255, 255, 0.286);
 }
 
 .password{
@@ -50,6 +56,10 @@ h2{
     background-color: rgba(246, 245, 245, 0.2);
     border: 0px  rgba(246, 245, 245, 0.1);
     box-shadow: 0px 1px 5px rgba(104, 104, 104, 0.4);
+}
+
+.password input:focus{
+    outline: 2px dashed rgba(255, 255, 255, 0.286);
 }
 
 i{
@@ -124,6 +134,11 @@ a:hover{
     color: white;
     box-shadow: 0px 1px 5px rgba(104, 104, 104, 0.4);
 }
+
+.calculate input:focus{
+    outline: 2px dashed rgba(255, 255, 255, 0.286);
+}
+
 
 p{
     margin-top: 30px;

@@ -1,31 +1,32 @@
 {% extends "base.html" %}
 {% block content %}
-<h1>歡迎光臨，請輸入帳號密碼</h1>
-<h2>登入系統</h2>
-<form action="/signin" method="POST">
-    <div class="account">
-        <label for="account"><i class="fa-solid fa-user"></i></label>
-        <input type="text" name="account" id="account" placeholder="Account">
-    </div>
-    <div class="password">
-        <label for="password"><i class="fa-solid fa-key"></i></label>
-        <input type="password" name="password" id="password" placeholder="Password">
-    </div>
-    <button>L O G I N</button>
-</form>
+<body>
+    <h1>歡迎光臨，請輸入帳號密碼</h1>
+    <h2>登入系統</h2>
+    <form action="/signin" method="POST">
+        <div class="account">
+            <label for="account"><i class="fa-solid fa-user"></i></label>
+            <input type="text" name="account" id="account" placeholder="Account">
+        </div>
+        <div class="password">
+            <label for="password"><i class="fa-solid fa-key"></i></label>
+            <input type="password" name="password" id="password" placeholder="Password">
+        </div>
+        <button>L O G I N</button>
+    </form>
 
-<br/>
-<br/>
-<hr/>
-<br/>
+    <br/>
+    <br/>
+    <hr/>
+    <br/>
 
-<h2>計算正整數的平方</h2>
-<form action="/square" method="POST">
-    <div class="calculate">
-        <label for="num"><i class="fa-solid fa-calculator"></i></label>
-        <input type="text" name="num" id="num" placeholder="Positive integer">
-    </div>
-    <button>Calculate</button>
-</form>
-
+    <h2>計算正整數的平方</h2>
+    <form action="/square" method="POST">
+        <div class="calculate">
+            <label for="num"><i class="fa-solid fa-calculator"></i></label>
+            <input type="text" name="num" id="num" placeholder="Positive integer">
+        </div>
+        <button>Calculate</button>
+    </form>
+</body>
 {% endblock content %}
