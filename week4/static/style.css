@@ -1,0 +1,138 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body{
+    text-align: center;
+    background-color: rgb(9, 55, 71);
+}
+
+h1{
+    color: white;
+    padding: 20px;
+}
+
+h2{
+    margin: 20px;
+    color: white;
+}
+
+
+.account{
+    margin: 15px;
+    font-size: 25px;
+}
+
+.account input{
+    height: 25px;
+    border-radius: 15px;
+    padding: 20px 10px;
+    font-size: 20px;
+    background-color: rgba(246, 245, 245, 0.2);
+    border: 0px  rgba(246, 245, 245, 0.1);
+    color: white;
+    box-shadow: 0px 1px 5px rgba(104, 104, 104, 0.4);
+}
+
+.password{
+    margin: 15px;
+    font-size: 25px;
+}
+
+.password input{
+    height: 25px;
+    border-radius: 15px;
+    padding: 20px 10px;
+    font-size: 20px;
+    background-color: rgba(246, 245, 245, 0.2);
+    border: 0px  rgba(246, 245, 245, 0.1);
+    box-shadow: 0px 1px 5px rgba(104, 104, 104, 0.4);
+}
+
+i{
+    background-color: white;
+    padding: 15px;
+    border-radius: 50%;
+}
+
+.warn{
+    animation: warn 0.4s ease infinite;
+}
+
+@keyframes warn{
+    form{
+        background-color: rgb(223, 39, 76);
+    }
+    to{
+        background-color: rgb(121, 25, 25);
+    }
+}
+
+button{
+    margin-top: 25px;
+    padding: 8px 125px;
+    font-size: 16px;
+    background-color: white;
+    color: rgb(9, 55, 71);
+    border: 0;
+    border-radius: 15px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0px 1px 5px rgba(104, 104, 104, 0.8);
+}
+
+button:hover{
+    opacity: 0.7;
+}
+
+a{
+    text-decoration: none;
+    background-color: white;
+    color: rgb(9, 55, 71);
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+a:hover{
+    opacity: 0.7;
+}
+
+.a_btn{
+    margin-top: 50px;
+}
+
+
+/* square */
+.calculate{
+    margin-top: 30px;
+    margin-bottom: 10px;
+    font-size: 25px;
+}
+
+.calculate input{
+    height: 25px;
+    border-radius: 15px;
+    padding: 20px 10px;
+    font-size: 20px;
+    background-color: rgba(246, 245, 245, 0.2);
+    border: 0px  rgba(246, 245, 245, 0.1);
+    color: white;
+    box-shadow: 0px 1px 5px rgba(104, 104, 104, 0.4);
+}
+
+p{
+    margin-top: 30px;
+    font-size: 25px;
+    color: white;
+}
+
+img{
+    max-width: 100%;
+    width: 500px;
+    margin-top: 50px;
+}
