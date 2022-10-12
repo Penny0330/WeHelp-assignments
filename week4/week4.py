@@ -21,22 +21,22 @@ def singin():
     # 帳號&密碼接正確
     if account == "test" and password == "test":
         session["account"] = account
-        return redirect("/member")
+        return redirect(url_for("member"))
     # 其中之一為空
     elif account == "" or password == "":
-        return redirect("/error?message=請輸入帳號、密碼")
+        return redirect(url_for("error", message="請輸入帳號、密碼"))
     # 帳號&密碼都有輸入，其一有誤
     elif account != "test" or password != "test":
-        return redirect("/error?message=帳號、或密碼輸入錯誤")
+        return redirect(url_for("error", message="帳號、或密碼輸入錯誤"))
 
 
 @app.route("/member")
 def member():
-    # 帳號已存在，就可會員頁面，否則直接跳回首頁
+    # 如帳號已存在，就可直接連到會員頁面，否則直接跳回首頁
     if "account" in session:
         return render_template("member.html")
     else:
-        return redirect("/")
+        return redirect(url_for("home"))
 
 
 @app.route("/error")
@@ -48,8 +48,8 @@ def error():
 @app.route("/signout")
 def signout():
     # 刪除 session 裡的帳號紀錄，並跳回首頁
-    del session["account"]
-    return redirect("/")
+    session.pop("account", None)
+    return redirect(url_for("home"))
 
 
 # Optional
