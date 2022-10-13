@@ -54,14 +54,9 @@ def signout():
 
 # Optional
 
-@app.route("/square", methods=["POST"])
-def square():
-    nums = request.form.get("num", type=int, default=0)
-    return redirect(url_for("square1", num=nums))
-
-
-@app.route("/square/<int:num>")
-def square1(num):
+@app.route("/square/<num>")
+def square(num):
+    num = int(num)
     squareNum = num * num
     return render_template("square.html", num=num, squareNum=squareNum)
 

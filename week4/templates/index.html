@@ -21,12 +21,28 @@
     <br/>
 
     <h2>計算正整數的平方</h2>
-    <form action="/square" method="POST">
-        <div class="calculate">
-            <label for="num"><i class="fa-solid fa-calculator"></i></label>
-            <input type="text" name="num" id="num" placeholder="Positive integer">
-        </div>
-        <button>Calculate</button>
-    </form>
+    <div class="calculate">
+        <label for="num"><i class="fa-solid fa-calculator"></i></label>
+        <input type="text" name="num" id="num" placeholder="Positive integer">
+    </div>
+    <button class="btn">Calculate</button>
+
+    <script>
+        //原先用 form 包起來將 input 包起來，為了使用 js 來導向頁面，
+        //必須刪除 form 避免 action 屬性
+        // 點擊 Calculate 的 button 時，先取得 input 裡的值，透過 location.href 導向網址
+
+        let btn = document.querySelector(".btn");
+        btn.addEventListener("click", function(){
+            num = document.querySelector("#num").value;
+            num = Number(num)
+            // 如果輸入的數字非正數，則會跳出錯誤視窗題醒
+            if (num == "" || num % 1 !== 0 || num < 0){
+                swal("Error!", "Please input a positive integer", "error", {button: "Close!"});
+            }else{
+                location.href = "/square/" + num;
+            }
+        });
+    </script>
 </body>
 {% endblock content %}
