@@ -1,9 +1,14 @@
 from flask import Flask, render_template, request, redirect, url_for, make_response
+from cryptography.fernet import Fernet
+
 app = Flask(
     __name__,
     static_folder="static",
     static_url_path="/"
 )
+
+key = Fernet.generate_key()
+f = Fernet(key)
 
 
 @app.route("/")
@@ -18,9 +23,10 @@ def singin():
     password = request.form["password"]
     # 帳號&密碼接正確
     if account == "test" and password == "test":
-        # 使用 make_response 將設置的 cookie 包起來回傳給使用者的瀏覽器
+        # 在加密前先轉換成 byte 型態
+        account_byte = f.encrypt(account.encode())
         response = make_response(redirect(url_for("member")))
-        response.set_cookie("account", account)
+        response.set_cookie("account", account_byte)
         return response
     # 其中之一為空
     elif account == "" or password == "":
