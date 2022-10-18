@@ -179,7 +179,7 @@
 
 ---
 
-- 阿虎覺得第 3 則留言很讚，就按了一個讚! 按讚的數量 +1
+- 小蟑覺得第 3 則留言很讚，就按了一個讚! 按讚的數量 +1
 
   ```
   SELECT `member_id`, `name` FROM `member` JOIN `like_member`
@@ -199,6 +199,11 @@
   SELECT COUNT(*) FROM `member` JOIN `like_member`
   ON `id` = `like_member`.`member_id`
   WHERE `message_id` = 3;
+
+  SELECT `member_id`, `name`  FROM `member` JOIN `like_member`
+  ON `id` = `like_member`.`member_id`
+  WHERE `message_id` = 3;
   ```
 
   ![img](./img/pic_6.png)
+  ![img](./img/pic_7.png)
