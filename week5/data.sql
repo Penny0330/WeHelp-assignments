@@ -16,6 +16,33 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `like_member`
+--
+
+DROP TABLE IF EXISTS `like_member`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `like_member` (
+  `message_id` bigint NOT NULL,
+  `member_id` bigint NOT NULL,
+  PRIMARY KEY (`message_id`,`member_id`),
+  KEY `member_id` (`member_id`),
+  CONSTRAINT `like_member_ibfk_1` FOREIGN KEY (`message_id`) REFERENCES `message` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `like_member_ibfk_2` FOREIGN KEY (`member_id`) REFERENCES `member` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `like_member`
+--
+
+LOCK TABLES `like_member` WRITE;
+/*!40000 ALTER TABLE `like_member` DISABLE KEYS */;
+INSERT INTO `like_member` VALUES (2,1),(6,1),(2,2),(3,2),(2,3),(2,4),(3,4),(2,5),(7,5),(2,6),(3,6),(2,7),(3,7),(5,7);
+/*!40000 ALTER TABLE `like_member` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `member`
 --
 
@@ -81,4 +108,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-10-17 20:34:55
+-- Dump completed on 2022-10-18 20:49:42
