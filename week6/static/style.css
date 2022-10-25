@@ -1,0 +1,201 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body{
+    text-align: center;
+}
+
+h1{
+    color: white;
+    padding: 20px;
+    background-color: rgba(9, 55, 71, 0.8);
+}
+
+main{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 50px;
+}
+
+.signup{
+    padding: 20px;
+    border-radius: 50px;
+    background-color: rgb(9, 55, 71);
+}
+
+
+.login{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 20px;
+    border-radius: 50px;
+    background-color: rgb(9, 55, 71);
+}
+
+.login button{
+    margin-top: 80px;
+}
+
+
+h2{
+    margin: 20px;
+    color: black;
+}
+
+.login h2, .signup h2{
+    color: white;
+}
+
+
+.account, .password, .name{
+    margin: 15px;
+    font-size: 25px;
+}
+
+.account input, .password input, .name input{
+    height: 25px;
+    border-radius: 15px;
+    padding: 20px 10px;
+    font-size: 20px;
+    background-color: rgba(246, 245, 245, 0.2);
+    border: 0px  rgba(246, 245, 245, 0.1);
+    color: white;
+    box-shadow: 0px 1px 5px rgba(104, 104, 104, 0.4);
+}
+
+.account input:focus, .password input:focus, .name input:focus{
+    outline: 2px dashed rgba(255, 255, 255, 0.286);
+}
+
+
+i{
+    background-color: white;
+    padding: 15px;
+    border-radius: 50%;
+}
+
+.hand{
+    font-size: 40px; 
+    padding: 10px;
+    color: rgb(241, 168, 10);
+    margin-right: 5px;
+}
+
+.warn{
+    color: white;
+    background-color: rgb(223, 39, 76);
+    animation: warn 0.4s ease infinite;
+}
+
+@keyframes warn{
+    form{
+        background-color: rgb(223, 39, 76);
+    }
+    to{
+        background-color: rgb(121, 25, 25);
+    }
+}
+
+button{
+    margin-top: 25px;
+    padding: 8px 20px;
+    font-size: 16px;
+    background-color: white;
+    color: rgba(9, 55, 71, 0.8);
+    border: 0;
+    border-radius: 15px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0px 1px 5px rgba(104, 104, 104, 0.8);
+}
+
+button:hover{
+    opacity: 0.7;
+}
+
+a{
+    text-decoration: none;
+    background-color: rgba(9, 55, 71, 0.8);
+    color: white;
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+a:hover{
+    opacity: 0.7;
+}
+
+.a_btn{
+    margin-top: 50px;
+}
+
+hr{
+    margin: 90px 0 50px 0;
+}
+
+.message_h1{
+    color: black;
+    padding: 20px;
+    background-color: white;
+}
+
+.message_icon{
+    color: rgb(25, 119, 219);
+    border: 2px;
+    box-shadow: 0px 1px 5px rgba(104, 104, 104, 0.4);
+}
+
+.message{
+    font-size: 20px;
+    margin-top: 50px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+.message label{
+    font-weight: bold;
+}
+
+.message input{
+    height: 25px;
+    border-radius: 15px;
+    padding: 20px 10px;
+    margin: 0 25px;
+    font-size: 20px;
+    background-color: rgba(104, 104, 104, 0.4);
+    border: 0px  white;
+    color: black;
+    box-shadow: 0px 1px 5px rgba(104, 104, 104, 0.4);
+}
+
+.message_btn{
+    background-color: rgba(9, 55, 71, 0.8);
+    color: white;
+    margin: 0;
+}
+
+table{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid;
+    padding: 10px 20px;
+}
+
+th{
+    font-size: 20px;
+}

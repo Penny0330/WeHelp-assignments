@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1>歡迎光臨，請註冊登入系統</h1>
+    <main>
+        <div class="signup">
+            <h2>註冊帳號</h2>
+            <form action="{{ url_for('signup') }}" method="POST">
+                <div class="name">
+                    <label for="name"><i class="fa-solid fa-user"></i></label>
+                    <input type="text" name="name" id="name" placeholder="Name"  required>
+                </div>
+                <div class="account">
+                    <label for="account"><i class="fa-solid fa-user"></i></label>
+                    <input type="text" name="account" id="account_signup" placeholder="Account"  required>
+                </div>
+                <div class="password">
+                    <label for="password"><i class="fa-solid fa-key"></i></label>
+                    <input type="password" name="password" id="password_signup" placeholder="Password"  required>
+                </div>
+                <button>S I G N U P</button>
+            </form>
+        </div>
+
+        <div class="line"></div>
+
+        <div class="login">
+            <h2>登入系統</h2>
+            <form action="{{ url_for('singin') }}" method="POST">
+                <div class="account">
+                    <label for="account"><i class="fa-solid fa-user"></i></label>
+                    <input type="text" name="account" id="account_login" placeholder="Account">
+                </div>
+                <div class="password">
+                    <label for="password"><i class="fa-solid fa-key"></i></label>
+                    <input type="password" name="password" id="password_login" placeholder="Password">
+                </div>
+                <button>L O G I N</button>
+            </form>
+        </div>
+    </main>
+{% endblock content %}
