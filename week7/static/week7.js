@@ -7,8 +7,8 @@ search_btn.addEventListener("click", ()=>{
         return response.json();
     })
     .then(function(success){
-        name = success.data.name
-        username = success.data.username
+        name = success.data.name;
+        username = success.data.username;
         result_username.innerHTML = `${name} ( ${username} )`;
     })
     .catch(function(error){
