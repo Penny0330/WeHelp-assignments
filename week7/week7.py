@@ -1,5 +1,3 @@
-from stat import UF_APPEND
-from unicodedata import name
 from flask import Flask, render_template, request, redirect, session, url_for, jsonify
 from mysql.connector import pooling
 
