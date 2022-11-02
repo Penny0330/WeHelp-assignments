@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1>失敗頁面</h1>
+    <h2>
+        <i class="fa-solid fa-triangle-exclamation warn"></i> 
+        {{message}} 
+    </h2>
+    <div class="a_btn">
+        <a href="{{ url_for('home') }}">HOME</a>
+    </div>
+{% endblock content %}

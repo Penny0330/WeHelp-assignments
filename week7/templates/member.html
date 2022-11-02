@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1>歡迎光臨，這是會員頁</h1>
+    <h2>
+        <i class="fa-solid fa-hand hand"></i>
+        {{name}}，歡迎登入系統
+    </h2>
+    <div class="a_btn">
+        <a href="{{ url_for('signout') }}">SIGN OUT</a>
+    </div>
+
+    <hr/>
+
+    <h1 class="message_h1">
+        <i class="fa-regular fa-message message_icon"></i>
+        留言板
+    </h1>
+    <form action="{{ url_for('message') }}" method="POST">
+        <div class="message">
+            <label for="message">發佈留言</label>
+            <input type="text" name="message" id="message" placeholder="Message" required>
+            <button class="message_btn"> SUBMIT</button>
+        </div>
+    </form>
+
+    <table>
+        <tr>
+            <th>留言者</th>
+            <th>內容</th>
+            <th>時間</th>
+        </tr>
+        {% for x in message %}
+        <tr>
+            <td> {{x[0]}} </td>
+            <td> {{x[1]}} </td>
+            <td> {{x[2]}} </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <br/>
+
+    <div>
+        <h2>查詢會員姓名</h2>
+        <input type="text" name="username" id="username">
+        <button class="search_btn" type="submit">SEARCH</button>
+        <div class="result_username"></div>
+    </div>
+
+    <br/>
+    <br/>
+    <br/>
+
+    <div>
+        <h2>更新你的姓名</h2>
+        <input type="text" name="update_name" id="update_name">
+        <button class="update_btn" type="submit">UPDATE</button>
+        <div class="update_username"></div>
+    </div>
+
+    <form action=""></form>
+
+    <script src="week7.js"></script>
+{% endblock content %}
