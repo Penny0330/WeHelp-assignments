@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect, session, url_for
 from mysql.connector import pooling
+from MySQL import MySQLPassword
 
 app = Flask(
     __name__,
@@ -16,7 +17,7 @@ connection_pool = pooling.MySQLConnectionPool(
     pool_reset_session=True,
     host="localhost",
     user="root",
-    password="123456",
+    password=MySQLPassword(),
     database="website"
 )
 

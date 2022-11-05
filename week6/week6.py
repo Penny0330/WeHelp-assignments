@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect, session, url_for
 import mysql.connector
+from MySQL import MySQLPassword
 
 app = Flask(
     __name__,
@@ -12,7 +13,7 @@ app.secret_key = "secret"
 connection = mysql.connector.connect(
     host="localhost",
     user="root",
-    password="123456",
+    password=MySQLPassword(),
     database="website"
 )
 

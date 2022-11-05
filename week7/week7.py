@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect, session, url_for, jsonify
 from mysql.connector import pooling
+from MySQL import MySQLPassword
 
 
 app = Flask(
@@ -16,7 +17,7 @@ connection_pool = pooling.MySQLConnectionPool(
     pool_reset_session=True,
     host="localhost",
     user="root",
-    password="123456",
+    password=MySQLPassword(),
     database="website"
 )
 
@@ -144,12 +145,12 @@ def api_member():
                         "username": user[2]
                     }
                 })
-            else:
-                return jsonify({"data": None})
+            return jsonify({"data": None})
 
         else:
             if "account" in session:
                 username = session["account"]
+                print(username)
                 update_name = request.json["name"]
                 cur.execute(
                     "UPDATE `member` SET `name` = %s WHERE `username` = %s", [
@@ -158,8 +159,8 @@ def api_member():
                 connection_object.commit()
                 session["name"] = update_name
                 return jsonify({"ok": True})
-            else:
-                return jsonify({"error": True})
+
+            return jsonify({"error": True})
     except:
         print("There appears to be some error!")
     finally:
