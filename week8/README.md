@@ -86,6 +86,8 @@ grid-template-areas:
 
 ## 2. 利⽤ Grid 完成第⼀週作業，下⽅主內容 ( 景點列表 ) 的前端排版
 
+> https://penny0330.github.io/WeHelp-assignments/week8/
+
 ---
 
 # 主題二：完善資料驗證程序
@@ -122,4 +124,47 @@ grid-template-areas:
 >
 > <br/> 1. 是一種 index
 > <br/> 2. 不能為空值 Null
-> <br/>
+> <br/> 4. 設定主鍵的欄位值不可重複
+> <br/> 3. 每個 table 只能有一個
+
+> ### 索引 (Index)
+>
+> <br/> 1. 以資料欄位為依據，建立額外的資料結構，可以加快搜尋速度
+> <br/> 2. 分為 4 種 :
+> <br/> 主索引鍵( primary key )
+> <br/> 唯一索引( unique index ) : 不可重複、可為 Null 值
+> <br/> 非唯一索引( non-unique index ) : 可重複，可為 Null 值
+> <br/> 全文檢索( full-text search) : 只能在「 CHAR 」、「 VARCHAR 」
+> <br/> 與「 TEXT 」型態的欄位、可為 Null 值
+
+### 2. 請在 member 資料表中加入適當的索引，加快以下 SQL 語句的查詢效率 :SELECT \* FROM member WHERE username=’test’ and password=’test’
+
+```
+ALTER TABLE `member` ADD INDEX `sign_in` (`username`, `password`)
+```
+
+### 3. 如何驗證查詢效率是否真的變更好了？
+
+```
+使用 EXPLAIN 指令來分析查詢效率
+```
+
+```
+未加 Index 時 :
+type: ALL，表示整個表格的資料都審查一遍；
+rows: 10，表示查詢時檢查了 10 行。
+```
+
+![img](./pic/pic_6.png)
+
+```
+加 Index 時 :
+type: ref，一種索引搜尋；
+rows: 1，表示查詢時只檢查了 1 行。
+```
+
+![img](./pic/pic_7.png)
+
+### 4. 為什麼索引的設置能有效地改善查詢效率？
+
+> 索引會針對某一欄位去額外建立 B-Tree 樹狀結構
