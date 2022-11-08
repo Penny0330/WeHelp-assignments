@@ -168,3 +168,55 @@ rows: 1，表示查詢時只檢查了 1 行。
 ### 4. 為什麼索引的設置能有效地改善查詢效率？
 
 > 索引會針對某一欄位去額外建立 B-Tree 樹狀結構
+
+---
+
+# 主題五：使⽤ Connection Pool 連結資料庫
+
+### 1. 什麼是 Connection Pool？能帶給我們什麼好處？為什麼？
+
+> 提升效能、降低連線成本、提高連線數、保護資料庫
+> 當連線需求增大， 也能夠先 hold 住讓程式先在旁邊等待，待其他程式連線完畢並歸還，再給那些等待中的程式連線。
+
+### 2. 如何使⽤官⽅提供的 mysql-connector-python 套件，建立 Connection Pool。
+
+```
+1. 引入模組
+
+from mysql.connector import pooling
+```
+
+```
+2. create a Connection pool
+
+connection_pool = pooling.MySQLConnectionPool(
+    pool_name="connection_pool",
+    pool_size=5,
+    pool_reset_session=True,
+    host="localhost",
+    user="root",
+    password="123456",
+    database="website"
+)
+```
+
+### 3. 需要從資料庫取得查詢資料時，如何從 Connection Pool 取得 Connection，並且在資料操作結束後，歸還 Connection 到 Connection Pool 中。請展⽰你完成上述標準操作的程式碼。
+
+```
+try:
+    connection_object = connection_pool.get_connection()
+    cur = connection_object.cursor()
+
+    ... sql 語句...
+
+except:
+    print("There appears to be some error!")
+
+finally:
+    cur.close()
+    connection_object.close()
+```
+
+---
+
+# 主題六：了解並預防 Cross-Site Scripting (XSS) 攻擊
