@@ -1,0 +1,176 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wrapper{
+    display: grid;
+    grid-template-rows: 340px auto;
+    gap: 40px;
+
+    font-size: 20px;
+}
+
+nav{
+    display: grid;
+    grid-template-rows: auto 300px;
+}
+
+.top{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: "title . item";
+
+    align-items: center;
+    padding-left: 20px;
+
+    background-color: rgb(50, 36, 36);
+    color: white;
+}
+
+.item{
+    grid-area: item;
+
+    display: grid;
+    grid-auto-flow: column;
+    justify-self: end;
+}
+
+.item_text{
+    margin: 0 20px;
+}
+
+.icon{
+    display: none;
+
+    margin: 0 20px; 
+}
+
+.website{
+    grid-area: title;
+}
+
+.welcome{
+    /* 字:水平對齊中央*/
+    text-align: center;
+
+    font-size: 40px;
+    font-weight: bold;
+    background-color: rgb(24, 118, 185);
+    color: white;
+
+
+    /* 字:垂直對齊中央*/
+    display: grid;
+    align-items: center;
+}
+
+main{
+    width: 1200px;
+    display: grid;
+    grid-template-areas: ". container .";
+    justify-self: center;
+
+    margin-bottom: 40px;
+}
+
+.container{
+    grid-area: container;
+
+    display: grid;
+    grid-template-rows: 50px auto;
+    grid-template-areas: 
+    "promotion"
+    "title";
+    gap: 20px;
+}
+
+.promotion{
+    grid-area: promotion;
+
+    display: grid;
+    grid-template-columns: repeat(2, minmax(1fr, 590px));
+    grid-auto-flow: column;
+    gap: 20px;
+}
+
+.promotion_item{
+    background-color: rgb(83, 65, 65);
+    color: white;
+
+    display: grid;
+    grid-template-columns: 80px auto;
+    gap: 10px;
+ 
+}
+
+
+.promotion_item img{
+    width: 80px;
+    height: 50px;
+}
+
+.promotion_item p{
+    align-self: center;
+}
+
+.title{
+    grid-area: title;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+
+.title_item{
+    background-color: rgb(24, 118, 185);
+    color: white;
+}
+
+.title_item img{
+    width: 100%;
+}
+
+.title_item p{
+    text-align: center;
+    padding: 5px 0;
+}
+
+@media (max-width: 1200px) {
+    main{
+        width: 90%;
+    }
+
+    .title{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .container{
+        grid-template-rows: repeat(2, 50px) auto;
+        grid-template-areas: 
+        "promotion"
+        "promotion"
+        "title";
+    }
+
+    .promotion{
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2, 1fr);
+    }
+
+    .title{
+        grid-template-columns: 1fr;
+    }
+
+    .item_text{
+        display: none;
+    }
+
+    .icon{
+        display: block;
+    }
+}
