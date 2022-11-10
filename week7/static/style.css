@@ -67,6 +67,8 @@ h2{
     border: 0px  rgba(246, 245, 245, 0.1);
     color: white;
     box-shadow: 0px 1px 5px rgba(104, 104, 104, 0.4);
+
+    caret-color: orange;
 }
 
 .account input:focus, .password input:focus, .name input:focus{
@@ -209,4 +211,28 @@ th{
 .result_username, .update_username{
     padding: 50px;
     font-size: 24px;
+}
+
+/* 表單驗證 */
+input.valid{
+    border:  5px solid rgb(135, 216, 135);
+}
+
+input.invalid{
+    border:  5px solid rgb(204, 104, 104);
+}
+
+/* password eye */
+div.password{
+    position: relative;
+}
+
+#eye_signup, #eye_login{
+    background-color: rgb(221, 208, 208);
+    padding: 0;
+    font-size: 15px;
+    position: absolute;
+    bottom: 20px;
+    right: 12px;
+    cursor: pointer;
 }

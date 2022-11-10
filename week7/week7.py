@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, redirect, session, url_for, jsonify
 from mysql.connector import pooling
 from MySQL import MySQLPassword
+from flask_bcrypt import Bcrypt
 
 
 app = Flask(
@@ -9,6 +10,10 @@ app = Flask(
     static_url_path="/"
 )
 
+# hash password
+bcrypt = Bcrypt(app)
+
+# session
 app.secret_key = "secret"
 
 connection_pool = pooling.MySQLConnectionPool(
@@ -45,8 +50,9 @@ def signup():
         if user != None:
             return redirect(url_for("error", message="帳號已被註冊"))
         else:
+            hashed_password = bcrypt.generate_password_hash(password=password)
             insert = "INSERT INTO `member`(`name`, `username`, `password`) VALUES (%s, %s, %s)"
-            value = (name, account, password)
+            value = (name, account, hashed_password)
             cur.execute(insert, value)
             connection_object.commit()
             return redirect(url_for("home"))
@@ -65,15 +71,20 @@ def singin():
         connection_object = connection_pool.get_connection()
         cur = connection_object.cursor()
         cur.execute(
-            "SELECT * FROM `member` WHERE `username` = %s AND `password` = %s", [account, password])
-        user = cur.fetchone()
-        if user == None:
+            "SELECT * FROM `member` WHERE `username` = %s", [account])
+        user_account = cur.fetchone()
+        if user_account == None:
             return redirect(url_for("error", message="帳號、或密碼輸入錯誤"))
         else:
-            session["id"] = user[0]
-            session["name"] = user[1]
-            session["account"] = user[2]
-            return redirect(url_for("member", name=user[1]))
+            check_password = bcrypt.check_password_hash(
+                user_account[3], password)
+            if check_password:
+                session["id"] = user_account[0]
+                session["name"] = user_account[1]
+                session["account"] = user_account[2]
+                return redirect(url_for("member", name=user_account[1]))
+            else:
+                return redirect(url_for("error", message="帳號、或密碼輸入錯誤"))
     except:
         print("There appears to be some error!")
     finally:
